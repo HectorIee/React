@@ -116,10 +116,93 @@ console.log(frutas.length);
 
 * Desestructruación - important
 
+Las dos estructuras de datos más utilizadas en JavaScript son Object y Array.
+Los objetos nos permiten crear una entidad única que almacena los elementos de datos por clave.
+Los Arrays nos permiten reunir elementos de datos en una lista ordenada.
+Aunque, cuando los pasamos a una función, puede que no sea necesario que sea un objeto/array como un todo. Puede necesitar piezas individuales.
 
+La asignación de desestructuración es una sintaxis especial que nos permite "desempaquetar" arrays u objetos en un montón de variables, ya que a veces eso es más conveniente.
+La desestructuración también funciona muy bien con funciones complejas que tienen muchos parámetros, valores por defecto, etc. Pronto lo veremos.
 
+## Array destructuring
+Here’s an example of how an array is destructured into variables:
+```javascript
+// we have an array with the name and surname
+let arr = ["John", "Smith"]
+
+// destructuring assignment
+// sets firstName = arr[0]
+// and surname = arr[1]
+let [firstName, surname] = arr;
+
+alert(firstName); // John
+alert(surname);  // Smith
+```
+
+## Desestructuración de objetos
+La asignación de desestructuración también funciona con objetos.
+
+La sintaxis básica es
+
+let {var1, var2} = {var1:..., var2:...}
+Debemos tener un objeto existente en el lado derecho, que queremos dividir en variables. El lado izquierdo contiene un "patrón" tipo objeto para las propiedades correspondientes. En el caso más simple, es una lista de nombres de variables en {...}.
+
+Por ejemplo:
+```javascript
+let opciones = {
+  título: "Menú",
+  anchura: 100
+  altura: 200
+};
+
+let {título, anchura, altura} = opciones;
+
+alert(title); // Menú
+alert(anchura); // 100
+alert(altura); // 200
+```
 
 * Promesas
+El objeto `Promise` representa la eventual finalización (o falla) de una operación asincrónica y su valor resultante.
+
+Una Promesa (Promise) es un proxy de un valor que no necesariamente se conoce cuando se crea la promesa. Le permite asociar controladores con el valor eventual de éxito o el motivo de falla de una acción asíncrona.
+
+Una promesa pendiente puede cumplirse con un valor o rechazarse con un motivo (error). Cuando ocurre cualquiera de estas opciones, se llama a los controladores asociados en cola por el método then de una promesa. 
+
+```javascript
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("foo");
+  }, 300);
+});
+
+myPromise
+  .then(handleResolvedA, handleRejectedA)
+  .then(handleResolvedB, handleRejectedB)
+  .then(handleResolvedC, handleRejectedC);
+```
+
 * Fetch API
+La API Fetch proporciona una interfaz para recuperar recursos (incluso a través de la red). Resultará familiar a cualquiera que haya usado XMLHttpRequest, pero la nueva API ofrece un conjunto de características más potente y flexible.
+
 * Ternarios
+El operador condicional (ternario) es el único operador en JavaScript que tiene tres operandos. Este operador se usa con frecuencia como atajo para la instrucción if.
+
+```js
+condición ? expr1 : expr2
+```
+
+>condición
+
+Una expresión que se evalúa como true o false.
+
+>expr1, expr2
+
+Expresión con valores de algún tipo.
+
 * Async - Await
+
+
+
+https://developer.mozilla.org/es/
+
