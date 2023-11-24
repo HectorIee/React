@@ -23,12 +23,26 @@
 
 - AAA
     - Arrange - Arreglar
-        Preparamos el estado inicial
+        Preparamos el estado inicial , preparamos el ambiente a probar.
             1. Inicializamos variables
             2. Importaciones necesarias
     - Act - Actuar
-
+        Aplicamos acciones o estímulos al sujeto de pruebas, el paso anterior.
+            1. Llamar métodos
+            2. Simular clicks
+            3. Realizar acciones sobre el paso anterior
     - Assert - Afirmar
+        Observar el comportamiento resultante, es decir, si los resultados son los esperados.
+            1. Son los resultados esperados
+                Ej: Que algo cambie, algo incremente o bien que nada suceda.
+
+- Mitos
+    1. Hacen que mi aplicación no tenga errores
+    2. Las pruebas no pueden fallar 
+    3. Hacen mas lenta mi aplicación
+    4. Perdida de tiempo
+    5. Hay que probar todo
+    
     
 
 - Primeras pruebas
