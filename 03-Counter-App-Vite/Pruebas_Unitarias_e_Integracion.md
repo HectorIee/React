@@ -43,9 +43,7 @@
     4. Perdida de tiempo
     5. Hay que probar todo
     
-    
 
-- Primeras pruebas
 - Jest
 - Expect
 - toBe
