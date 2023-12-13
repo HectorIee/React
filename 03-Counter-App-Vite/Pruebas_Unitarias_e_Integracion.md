@@ -110,7 +110,6 @@
         - Se comprueba la escasez de la matriz, p. [, 1] no será igual a [undefined, 1];
         - Se comprueban los tipos de objetos, p. una instancia de clase con los campos a y b no será igual a un objeto literal con los campos a y b.
 
-- Enzyme
 - Comandos útiles en la terminal para pruebas
 - Revisar elementos renderizados en el componente
 - Simular eventos
