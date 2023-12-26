@@ -200,8 +200,70 @@ Una expresión que se evalúa como true o false.
 
 Expresión con valores de algún tipo.
 
-* Async - Await
+Si la condición es true, el operador retorna el valor de la expr1; de lo contrario, devuelve el valor de expr2. Por ejemplo, para mostrar un mensaje diferente en función del valor de la variable isMember, se puede usar esta declaración:
 
+```js
+"La Cuota es de:  " + (isMember ? "$2.00" : "$10.00");
+```
+
+También puedes asignar variables dependiendo del resultado de la condición ternaria:
+
+```js
+var elvisLives = Math.PI > 4 ? "Sip" : "Nop";
+```
+También es posible realizar evaluaciones ternarias múltiples (Nota: El operador condicional es asociativo):
+```js
+var firstCheck = false,
+  secondCheck = false,
+  access = firstCheck
+    ? "Acceso Denegado"
+    : secondCheck
+    ? "Acceso Denegado"
+    : "Acceso Permitido";
+
+console.log(access); // muestra "Acceso Permitido"
+```
+
+* Async - Await
+Existe una sintaxis especial para trabajar con promesas de una forma más confortable, llamada “async/await”. Es sorprendentemente fácil de entender y usar.
+## ASYNC
+Comencemos con la palabra clave async. Puede ser ubicada delante de una función como aquí:
+```js
+async function f() {
+  return 1;
+}
+```
+La palabra “async” ante una función significa solamente una cosa: que la función siempre devolverá una promesa. Otros valores serán envueltos y resueltos en una promesa automáticamente.
+
+Por ejemplo, esta función devuelve una promesa resuelta con el resultado de 1; Probémosla:
+```js
+async function f() {
+  return 1;
+}
+
+f().then(alert); // 1
+```
+
+## AWAIT
+await hace que JavaScript espere hasta que la promesa responda y devuelve su resultado.
+
+Aquí hay un ejemplo con una promesa que resuelve en 1 segundo:
+```js
+async function f() {
+
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("¡Hecho!"), 1000)
+  });
+
+  let result = await promise; // espera hasta que la promesa se resuelva (*)
+
+  alert(result); // "¡Hecho!"
+}
+
+f();
+```
+
+La ejecución de la función es pausada en la línea (*) y se reanuda cuando la promesa responde, con result volviéndose su resultado. Entonces el código arriba muestra “¡Hecho!” en un segundo.
 
 
 https://developer.mozilla.org/es/
