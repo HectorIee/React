@@ -1,11 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React, { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client' //Llama al React DOM para renderizar componentes
 import GifExpertApp from './GifExpertApp'
 
 import './styles.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <GifExpertApp />
-  </React.StrictMode>
-)
+const started = <StrictMode> <GifExpertApp /> </StrictMode>
+ 
+// react 18
+const root = createRoot(document.getElementById('root'));
+root.render(started);
